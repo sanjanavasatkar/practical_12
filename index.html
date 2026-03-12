@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)file:///C:/Users/admin/Desktop/index%20.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Login Page Validation</title>
+
+<script>
+function validate()
+{
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+
+    // Regular Expressions
+    var userPattern = /^[A-Za-z]{3,10}$/;
+    var passPattern = /^[A-Za-z0-9@#]{6,12}$/;
+
+    if(userPattern.test(username) == false)
+    {
+        alert("Username must contain 3 to 10 letters only");
+        return false;
+    }
+
+    if(passPattern.test(password) == false)
+    {
+        alert("Password must be 6 to 12 characters");
+        return false;
+    }
+
+    alert("Login Successful");
+    return true;
+}
+</script>
+
+</head>
+
+<body>
+
+<h2 align="center">Login Page</h2>
+
+<form onsubmit="return validate()">
+
+<table border="1" align="center" cellpadding="10">
+
+<tbody><tr>
+<td>Username</td>
+<td><input type="text" id="username" required=""></td>
+</tr>
+
+<tr>
+<td>Password</td>
+<td><input type="password" id="password" required=""></td>
+</tr>
+
+<tr>
+<td colspan="2" align="center">
+<input type="submit" value="Login">
+<input type="reset" value="Reset">
+</td>
+</tr>
+
+</tbody></table>
+
+</form>
+
+
+</body></html>
